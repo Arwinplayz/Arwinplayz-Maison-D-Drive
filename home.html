@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" href="images/icon.png" type="image/png" />
+    <title>Maison Dé Drive</title>
+  </head>
+  <body>
+    <header class="header">
+      <nav>
+        <div class="nav__bar">
+          <div class="logo nav__logo">
+            <a href="home.html"><img src="images/logo2.png" alt="logo" /></a>
+          </div>
+          <div class="nav__menu__btn" id="menu-btn">
+            <i class="ri-menu-3-line"></i>
+          </div>
+        </div>
+        <ul class="nav__links" id="nav-links">
+          <li><a href="home.html">HOME</a></li>
+          <li><a href="about_us.html">ABOUT</a></li>
+          <li><a href="our_history.html">HISTORY</a></li>
+          <li><a href="qualifications.html">QUALIFICATIONS</a></li>
+          <li><a href="companies.html">MODELS</a></li>
+          <a href="#footer">
+            <button class="btn">Contact Us</button>
+          </a>
+        </ul>
+      </nav>
+      <div class="audio-settings">
+        <label for="ambient-audio">Ambient Audio:</label>
+        <select id="ambient-audio">
+          <option value="none">None</option>
+          <option value="sounds/calm.mp3">Calm</option>
+          <option value="sounds/luxury.mp3">Luxury</option>
+          <option value="sounds/showroom.mp3">Showroom</option>
+        </select>
+      </div>
+      <div class="section__container header__container" id="home">
+       <video autoplay muted loop playsinline id="bg-video">
+         <source src="videos/background.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+        </video>
+
+        <div class="overlay">
+          <h1>Drive Your Dreams</h1>
+          <a href="companies.html">
+            <button class="Learn_More"></button>
+          </a>
+        </div>
+        </div>
+      </div>
+    </header>
+
+    <section class="banner__container">
+      <div class="banner__card">
+        <h4>Live the right way</h4>
+      </div>
+      <div class="banner__card">
+        <h4>Where Luxury Meets the Road</h4>
+      </div>
+      <div class="banner__image">
+        <img src="images/banner.jpg" alt="banner" />
+      </div>
+    </section>
+
+    <section class="section__container experience__container" id="about">
+      <div class="experience__image">
+        <img src="images/experience.jpg" alt="experience" />
+      </div>
+      <div class="experience__content">
+        <p class="section__subheader">WHO WE ARE</p>
+        <h2 class="section__header">
+          Backed by Over 50 Years of Automotive Expertise
+        </h2>
+        <p class="section__description">
+          At Maison Dé Drive, we're more than just a dealership; we're a destination for automotive excellence. With a passion for performance and a commitment to service, we connect drivers with world-class vehicles and unmatched care. Whether you're chasing luxury, power, or reliability, we’re here to drive your dream forward.
+        </p>
+        <a href="our_history.html">
+          <button class="btn">Read More</button>
+        </a>
+      </div>
+    </section>
+
+    <section class="service" id="service">
+      <div class="section__container service__container">
+        <p class="section__subheader">Meet</p>
+        <h2 class="section__header">Our Partners</h2>
+        <p class="section__description">
+          Trust us to keep your automobile running smoothly and reliably.
+        </p>
+        <div class="service__grid">
+          <div class="service__card">
+            <a href="companies.html#Porsche">
+              <img src="images/porsche.svg" alt="service" class="manufacture_logo"/>
+            </a>
+            <h4>Porsche</h4>
+            <p>
+              Precision-built with racing DNA — a Porsche delivers pure driving exhilaration.            
+            </p>
+          </div>
+          <div class="service__card">
+            <a href="companies.html#Mercedes">
+              <img src="images/mercedes.svg" alt="service" class="manufacture_logo"/>
+            </a>
+            <h4>Mercedes</h4>
+            <p>
+              A symbol of refined luxury and groundbreaking innovation, crafted for elegance and comfort.
+            </p>
+          </div>
+          <div class="service__card">
+            <a href="companies.html#Ferrari">
+              <img src="images/ferrari.svg" alt="service" class="manufacture_logo"/>
+            </a>
+            <h4>Ferrari</h4>
+            <p>
+              Born in Maranello, Ferrari is where raw power meets iconic Italian design.
+            </p>
+          </div>
+          <div class="service__card">
+            <a href="companies.html#BMW">
+              <img src="images/bmw.svg" alt="service" class="manufacture_logo"/>
+            </a>
+            <h4>BMW</h4>
+            <p>
+             Engineered for the ultimate driving experience with dynamic precision and style.
+            </p>
+          </div>
+          <div class="service__card">
+            <a href="companies.html#Lamborghini">
+              <img src="images/lamborghini.svg" alt="service" class="manufacture_logo"/>
+            </a>
+            <h4>Lamborghini</h4>
+            <p>
+             Outrageously bold, brutally fast — Lamborghini is performance with attitude.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="customisation">
+      <div class="section__container customisation__container">
+        <p class="section__subheader">OUR ACHIEVEMENTS</p>
+        <h2 class="section__header">
+         A Legacy of Excellence on Every Road
+        </h2>
+        <p class="section__description">
+          Celebrating key moments that showcase our dedication to luxury, innovation, and unmatched service.
+        </p>
+        <div class="customisation__grid">
+          <div class="customisation__card">
+            <h4>2000+</h4>
+            <p>Luxury Vehicles Delivered</p>
+          </div>
+          <div class="customisation__card">
+            <h4>98%+</h4>
+            <p>Customer Satisfaction</p>
+          </div>
+          <div class="customisation__card">
+            <h4>15+</h4>
+            <p>Partnerships</p>
+          </div>
+          <div class="customisation__card">
+            <h4>500+</h4>
+            <p>Custon Builds</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="price__section">
+    <div class="section__container price__container" id="price">
+      <p class="section__subheader">EXPLORE</p>
+      <h2 class="section__header">What we offer</h2>
+      <p class="section__description">
+        Over 50 years of expertise
+      </p>
+      <div class="price__grid">
+        <div class="price__card">
+          <h4>About Us</h4>
+          <img src="images/about_us.png" alt="about us">
+          <a href="about_us.html">
+          <button class="Learn_More_2"></button>
+          </a>
+        </div>
+        <div class="price__card">
+          <h4>Our History</h4>
+          <img src="images/our_history.png" alt="our history">
+          <a href="our_history.html">
+            <button class="Learn_More_2"></button> 
+          </a>
+        </div>
+        <div class="price__card">
+          <h4>Qualifications</h4>
+          <img src="images/qualifications.png" alt="qualifications">
+          <a href="qualifications.html">
+            <button class="Learn_More_2"></button>
+          </a>
+        </div>
+      </div>
+    </div>
+    </section>
+
+    <section class="contact">
+      <div class="section__container contact__container">
+        <div class="contact__content">
+          <p class="section__subheader">CONTACT US</p>
+          <h2 class="section__header">Imagine Your Car Feeling New Again</h2>
+          <p class="section__description">
+            Experience the magic of a rejuvenated ride as we pamper your car
+            with precision care, leaving it feeling as good as new.
+          </p>
+          <div class="contact__btns">
+            <a href="#footer">
+              <button class="btn">Our Services</button>
+              <button class="btn">Contact Us</button>
+            </a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section__container showcase__container" id="models">
+      <p class="section__subheader">Trending</p>
+      <h2 class="section__header">100% Approved By Customers</h2>
+      <div class="swiper">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide">
+            <div class="showcase__card">
+              <img src="images/Bolide.png" alt="Bolide" />
+              <h4>Bugatti Bolide</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="showcase__card">
+              <img src="images/jesko.png" alt="Jesko" />
+              <h4>Koenigsegg Jesko</h4>
+            </div>
+          </div>
+          <div class="swiper-slide">
+            <div class="showcase__card">
+              <img src="images/amg one.png" alt="AMG One" />
+              <h4>Mercedes AMG One</h4>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-pagination"></div>
+      </div>
+    </section>
+
+    <footer class="footer" id="footer">
+      <div class="section__container subscribe__container">
+        <div class="subscribe__content">
+          <p class="section__subheader">OUR NEWSLETTER</p>
+          <h2 class="section__header">Subscribe To Our Newsletter</h2>
+          <p class="section__description">
+            Subscribe to our newsletter and receive exclusive content, expert
+            insights, and special offers delivered directly to your inbox.
+          </p>
+        </div>
+        <div class="subscribe__form">
+          <form id="subscribe-form">
+            <input type="text" placeholder="Your Email" />
+            <a href="#footer">
+              <button class="btn">Subscribe</button>
+            </a>
+          </form>
+        </div>
+      </div>
+      <div class="section__container footer__container">
+        
+         <div class="footer__col">
+            <h4>Brands</h4>
+            <ul class="footer__links">
+              <li><a href="#">Ferrari</a></li>
+              <li><a href="#">Lamborghini</a></li>
+              <li><a href="#">Rolls Royce</a></li>
+              <li><a href="#">BMW</a></li>
+              <li><a href="#">Aston Martin</a></li>
+              <li><a href="#">Koenigsegg</a></li>
+              <li><a href="#">Mercedes</a></li>
+              <li><a href="#">Bugatti</a></li>
+              <li><a href="#">Porsche</a></li>
+              <li><a href="#">Pagani</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Lifestyle</h4>
+            <ul class="footer__links">
+              <li><a href="#">Art Of Living</a></li>
+              <li><a href="#">Collectables</a></li>
+              <li><a href="#">Models</a></li>
+              <li><a href="#">Jewelry</a></li>
+              <li><a href="#">Store</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <h4>Customer Service</h4>
+            <ul class="footer__links">
+              <li><a href="#">Individual Service and Contact</a></li>
+              <li><a href="#">Maintenance</a></li>
+              <li><a href="#">Service Partner Network</a></li>
+              <li><a href="#">Warranty</a></li>
+              <li><a href="#">Roadside Assistance</a></li>
+              <li><a href="#">Accessories</a></li>
+            </ul>
+          </div>
+          <div class="footer__col">
+            <div class="logo footer__logo">
+              <a href="home.html"><img src="images/logo2.png" alt="logo" /></a>
+            </div>
+            <ul class="footer__socials">
+              <li>
+                <a href="#"><i class="ri-facebook-fill"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-google-fill"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-instagram-line"></i></a>
+              </li>
+              <li>
+                <a href="#"><i class="ri-youtube-line"></i></a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </footer>
+    <div class="footer__bar">
+      Copyright © 2025 Maison Dé Drive. All rights reserved.
+    </div>
+
+    <script src="https://unpkg.com/scrollreveal"></script>
+    <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+    <script src="main.js"></script>
+    <audio id="ambient-player" loop></audio>
+  </body>
+</html>

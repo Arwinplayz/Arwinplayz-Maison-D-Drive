@@ -1,0 +1,327 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <title>Maison Dé Drive</title>
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <div class="nav__bar">
+        <div class="logo nav__logo">
+          <a href="home.html"><img src="images/logo2.png" alt="logo" /></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about_us.html">ABOUT</a></li>
+        <li><a href="our_history.html">HISTORY</a></li>
+        <li><a href="qualifications.html">QUALIFICATIONS</a></li>
+        <li><a href="companies.html">MODELS</a></li>
+        <a href="#footer">
+          <button class="btn">Contact Us</button>
+        </a>
+      </ul>
+    </nav>
+
+    <div class="audio-settings">
+      <label for="ambient-audio">Ambient Audio:</label>
+      <select id="ambient-audio">
+        <option value="none">None</option>
+        <option value="sounds/calm.mp3">Calm</option>
+        <option value="sounds/luxury.mp3">Luxury</option>
+        <option value="sounds/showroom.mp3">Showroom</option>
+      </select>
+    </div>
+
+    <section class="brands">
+      <div class="container">
+
+        <div class="checkout__full-width-bg">
+          <div class="checkout__container">
+
+            <div class="checkout__section checkout__header__section"
+              style="position: relative; text-align: center; padding: 1rem 0;">
+              <a href="companies.html" style="position: absolute; left: 1rem; top: 50%; transform: translateY(-50%);">
+                <img src="/images/back.png" alt="back" style="width: 32px; height: auto;" />
+              </a>
+              <div>
+                <h1 class="checkout__header__title" style="margin: 0;">Build Your Dream</h1>
+                <p class="checkout__header__subtitle" style="margin: 0;">Customize every detail to create your perfect
+                  luxury vehicle.</p>
+              </div>
+            </div>
+
+
+            <div class="checkout__section checkout__models__section">
+              <h2 class="checkout__section__title">Select Your Model</h2>
+              <div class="checkout__grid checkout__grid__3" id="model-list"></div>
+            </div>
+
+
+            <div class="checkout__section checkout__options__section">
+
+
+              <div class="checkout__section checkout__color__section">
+                <h2 class="checkout__section__title">Choose Your Color</h2>
+                <div class="checkout__color__swatches" id="color-list">
+                </div>
+              </div>
+
+              <h2 class="checkout__section__title">Select Options</h2>
+              <div class="checkout__grid checkout__grid__3" id="option-list"></div>
+            </div>
+
+            <div class="checkout__section checkout__summary__section">
+              <h2 class="checkout__section__title">Your Summary</h2>
+              <div class="checkout__summary__card">
+                <h3 class="checkout__summary__model__title">Selected Model: <span id="summary-model">None</span></h3>
+                <p class="checkout__summary__color">Color: <span id="summary-color">None</span></p>
+                <ul class="checkout__summary__options" id="summary-options"></ul>
+
+                <div class="checkout__price__row"><span>Base Price:</span> <span>$<span id="base-price">0</span></span>
+                </div>
+                <div class="checkout__price__row"><span>Options:</span> <span>$<span id="options-price">0</span></span>
+                </div>
+                <div class="checkout__price__row"><span>Destination Fee:</span> <span>$<span
+                      id="destination-fee">1995</span></span></div>
+
+                <div class="checkout__total__price">Total: $<span id="total-price">0</span></div>
+
+                <div class="checkout__button__group">
+                  <a href="home.html" class="checkout__btn checkout__btn__primary" role="button">Schedule Test Drive</a>
+                  <a href="#footer" class="checkout__btn checkout__btn__outline" role="button">Contact Specialist</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <script>
+            const models = [
+              { id: "1", name: "S-Class", price: 342500, image: "/images/mercedes_s_class.jpg" },
+              { id: "2", name: "AMG GT", price: 409600, image: "/images/mercedes_amg_gt.jpg" },
+              { id: "3", name: "GLE 63 S", price: 284540, image: "/images/mercedes_gle.avif" }
+            ];
+
+            const options = [
+              { id: "a", name: "Sport Rims", price: 1200, image: "/images/sports_rim.jpg" },
+              { id: "b", name: "Leather Seats", price: 1600, image: "/images/leather_seats.jpeg" },
+              { id: "c", name: "Sunroof", price: 1000, image: "/images/sunroof.jpg" }
+            ];
+
+            const colors = [
+              { id: "black", name: "Jet Black", hex: "#000000" },
+              { id: "white", name: "Pearl White", hex: "#ffffff" },
+              { id: "red", name: "Racing Red", hex: "#c0392b" },
+              { id: "blue", name: "Sky Blue", hex: "#3498db" },
+              { id: "silver", name: "Metallic Silver", hex: "#bdc3c7" }
+            ];
+
+
+            let selectedModel = null;
+            const selectedOptionIds = new Set();
+            let selectedColor = null;
+
+            const colorList = document.getElementById("color-list");
+            const summaryColor = document.getElementById("summary-color");
+
+
+            const modelList = document.getElementById('model-list');
+            const optionList = document.getElementById('option-list');
+            const summaryModel = document.getElementById('summary-model');
+            const summaryOptions = document.getElementById('summary-options');
+            const basePriceEl = document.getElementById('base-price');
+            const optionsPriceEl = document.getElementById('options-price');
+            const totalPriceEl = document.getElementById('total-price');
+
+            function renderModels() {
+              models.forEach(model => {
+                const card = document.createElement('div');
+                card.className = 'checkout__card';
+                card.innerHTML = `
+          <img src="${model.image}" alt="${model.name}" class="checkout__card__img" />
+          <div class="checkout__card__content">
+            <h3 class="checkout__card__title">${model.name}</h3>
+            <p class="checkout__card__price">Price: $${model.price.toLocaleString()}</p>
+          </div>
+        `;
+                card.onclick = () => {
+                  selectedModel = model;
+                  document.querySelectorAll('#model-list .checkout__card').forEach(c => c.classList.remove('selected'));
+                  card.classList.add('selected');
+                  updateSummary();
+                };
+                modelList.appendChild(card);
+              });
+            }
+
+            function renderOptions() {
+              options.forEach(option => {
+                const card = document.createElement('div');
+                card.className = 'checkout__card';
+                card.innerHTML = `
+          <img src="${option.image}" alt="${option.name}" class="checkout__card__img" />
+          <div class="checkout__card__content">
+            <h3 class="checkout__card__title">${option.name}</h3>
+            <p class="checkout__card__price">+ $${option.price.toLocaleString()}</p>
+          </div>
+        `;
+                card.onclick = () => {
+                  if (selectedOptionIds.has(option.id)) {
+                    selectedOptionIds.delete(option.id);
+                    card.classList.remove('selected');
+                  } else {
+                    selectedOptionIds.add(option.id);
+                    card.classList.add('selected');
+                  }
+                  updateSummary();
+                };
+                optionList.appendChild(card);
+              });
+            }
+
+            function updateSummary() {
+              summaryModel.textContent = selectedModel ? selectedModel.name : "None";
+              summaryColor.textContent = selectedColor ? selectedColor.name : "None";
+
+              const selectedOptions = options.filter(o => selectedOptionIds.has(o.id));
+              summaryOptions.innerHTML = '';
+              selectedOptions.forEach(opt => {
+                const li = document.createElement('li');
+                li.textContent = `${opt.name} (+$${opt.price.toLocaleString()})`;
+                summaryOptions.appendChild(li);
+              });
+
+              const basePrice = selectedModel ? selectedModel.price : 0;
+              const optionsTotal = selectedOptions.reduce((sum, opt) => sum + opt.price, 0);
+              const destination = 1995;
+              const total = basePrice + optionsTotal + destination;
+
+              basePriceEl.textContent = basePrice.toLocaleString();
+              optionsPriceEl.textContent = optionsTotal.toLocaleString();
+              totalPriceEl.textContent = total.toLocaleString();
+            }
+
+            function renderColors() {
+              colors.forEach(color => {
+                const swatch = document.createElement('div');
+                swatch.className = 'checkout__color__swatch';
+                swatch.style.backgroundColor = color.hex;
+                swatch.title = color.name;
+
+                swatch.onclick = () => {
+                  selectedColor = color;
+                  document.querySelectorAll('.checkout__color__swatch').forEach(s => s.classList.remove('selected'));
+                  swatch.classList.add('selected');
+                  updateSummary();
+                };
+
+                colorList.appendChild(swatch);
+              });
+            }
+
+            renderModels();
+            renderOptions();
+            renderColors();
+          </script>
+
+          <footer class="footer" id="footer">
+            <div class="section__container subscribe__container">
+              <div class="subscribe__content">
+                <p class="section__subheader">OUR NEWSLETTER</p>
+                <h2 class="section__header">Subscribe To Our Newsletter</h2>
+                <p class="section__description">
+                  Subscribe to our newsletter and receive exclusive content, expert
+                  insights, and special offers delivered directly to your inbox.
+                </p>
+              </div>
+              <div class="subscribe__form">
+                <form id="subscribe-form">
+                  <input type="text" placeholder="Your Email" />
+                  <a href="#footer">
+                    <button class="btn">Subscribe</button>
+                  </a>
+                </form>
+              </div>
+            </div>
+            <div class="section__container footer__container">
+
+              <div class="footer__col">
+                <h4>Brands</h4>
+                <ul class="footer__links">
+                  <li><a href="#">Ferrari</a></li>
+                  <li><a href="#">Lamborghini</a></li>
+                  <li><a href="#">Rolls Royce</a></li>
+                  <li><a href="#">BMW</a></li>
+                  <li><a href="#">Aston Martin</a></li>
+                  <li><a href="#">Koenigsegg</a></li>
+                  <li><a href="#">Mercedes</a></li>
+                  <li><a href="#">Bugatti</a></li>
+                  <li><a href="#">Porsche</a></li>
+                  <li><a href="#">Pagani</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <h4>Lifestyle</h4>
+                <ul class="footer__links">
+                  <li><a href="#">Art Of Living</a></li>
+                  <li><a href="#">Collectables</a></li>
+                  <li><a href="#">Models</a></li>
+                  <li><a href="#">Jewelry</a></li>
+                  <li><a href="#">Store</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <h4>Customer Service</h4>
+                <ul class="footer__links">
+                  <li><a href="#">Individual Service and Contact</a></li>
+                  <li><a href="#">Maintenance</a></li>
+                  <li><a href="#">Service Partner Network</a></li>
+                  <li><a href="#">Warranty</a></li>
+                  <li><a href="#">Roadside Assistance</a></li>
+                  <li><a href="#">Accessories</a></li>
+                </ul>
+              </div>
+              <div class="footer__col">
+                <div class="logo footer__logo">
+                  <a href="home.html"><img src="images/logo2.png" alt="logo" /></a>
+                </div>
+                <ul class="footer__socials">
+                  <li>
+                    <a href="#"><i class="ri-facebook-fill"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ri-google-fill"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ri-instagram-line"></i></a>
+                  </li>
+                  <li>
+                    <a href="#"><i class="ri-youtube-line"></i></a>
+                  </li>
+                </ul>
+              </div>
+            </div>
+        </div>
+        </footer>
+        <div class="footer__bar">
+          Copyright © 2025 Maison Dé Drive. All rights reserved.
+        </div>
+
+        <script src="https://unpkg.com/scrollreveal"></script>
+        <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+        <script src="main.js"></script>
+        <audio id="ambient-player" loop></audio>
+</body>
+
+</html>

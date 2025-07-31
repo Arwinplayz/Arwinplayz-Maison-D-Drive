@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdn.jsdelivr.net/npm/remixicon@3.5.0/fonts/remixicon.css" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+  <link rel="stylesheet" href="styles.css" />
+  <link rel="icon" href="images/icon.png" type="image/png" />
+  <title>Maison Dé Drive</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .slide-panel {
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      transform: translateX(100%);
+      opacity: 0;
+    }
+
+    .slide-panel.active {
+      transform: translateX(0%);
+      opacity: 1;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="header">
+    <nav>
+      <div class="nav__bar">
+        <div class="logo nav__logo">
+          <a href="home.html"><img src="images/logo2.png" alt="logo" /></a>
+        </div>
+        <div class="nav__menu__btn" id="menu-btn">
+          <i class="ri-menu-3-line"></i>
+        </div>
+      </div>
+      <ul class="nav__links" id="nav-links">
+        <li><a href="home.html">HOME</a></li>
+        <li><a href="about_us.html">ABOUT</a></li>
+        <li><a href="our_history.html">HISTORY</a></li>
+        <li><a href="qualifications.html">QUALIFICATIONS</a></li>
+        <li><a href="companies.html">MODELS</a></li>
+        <a href="#footer">
+          <button class="btn">Contact Us</button>
+        </a>
+      </ul>
+    </nav>
+    <div class="audio-settings">
+      <label for="ambient-audio">Ambient Audio:</label>
+      <select id="ambient-audio">
+        <option value="none">None</option>
+        <option value="sounds/calm.mp3">Calm</option>
+        <option value="sounds/luxury.mp3">Luxury</option>
+        <option value="sounds/showroom.mp3">Showroom</option>
+      </select>
+    </div>
+
+    <div class="section__container header__container" id="home">
+      <video autoplay muted loop playsinline id="bg-video">
+        <source src="videos/reveal.mp4" type="video/mp4" />
+        Your browser does not support the video tag.
+      </video>
+
+      <div class="overlay">
+        <h1>Unlock Your Potential</h1>
+      </div>
+    </div>
+    </div>
+  </header>
+
+  <section class="brands__logos">
+    <div>
+      <div class="row py-3">
+        <div class="logo__band"><img src="images/white/porsche.svg" alt="" width="20%">
+        </div>
+        <div class="logo__band"><img src="images/white/mercedes.svg" alt="" width="20%">
+        </div>
+        <div class="logo__band"><img src="images/white/ferrari.svg" alt="" width="20%">
+        </div>
+        <div class="logo__band"><img src="images/white/bmw.svg" alt="" width="20%">
+        </div>
+        <div class="logo__band"><img src="images/white/lamborghini.svg" alt="" width="20%">
+        </div>
+      </div>
+    </div>
+  </section>
+
+
+
+  <section class="p-10 grid grid-cols-1 md:grid-cols-3 lg:grid-cols-3 gap-6 max-w-6xl mx-auto">
+
+    <div class="brand-row__header col-span-3">
+      <h2 class="brand-row__title" id="Porsche">Porsche</h2>
+      <img src="images/white/porsche.svg" alt="Porsche" class="brand-row__img">
+    </div>
+
+    <div class="car__card" data-model="model1">
+      <a href="customise_porsche.html">
+        <img src="images/porsche_911.jpeg" class="car__card" alt="Car 1" />
+        <h3 class="text-xl font-bold">911 Turbo S</h3>
+        <p class="text-sm text-gray-400">V12 Engine</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model2">
+      <a href="customise_porsche.html">
+        <img src="images/porsche_taycan.jpg" class="car__card" alt="Car 2" />
+        <h3 class="text-xl font-bold">Taycan Turbo</h3>
+        <p class="text-sm text-gray-400">Twin Turbo V8</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model3">
+      <a href="customise_porsche.html">
+        <img src="images/porsche_cayenne.jpg" class="car__card" alt="Car 3" />
+        <h3 class="text-xl font-bold">Cayenne Turbo</h3>
+        <p class="text-sm text-gray-400">6.5L V12</p>
+      </a>
+    </div>
+
+    <div class="brand-row__header col-span-3">
+      <h2 class="brand-row__title" id="Mercedes">Mercedes</h2>
+      <img src="images/white/mercedes.svg" alt="Mercedes" class="brand-row__img">
+    </div>
+
+    <div class="car__card" data-model="model4">
+      <a href="customise_mercedes.html">
+        <img src="images/mercedes_s_class.jpg" class="car__card" alt="Car 4" />
+        <h3 class="text-xl font-bold">S-Class</h3>
+        <p class="text-sm text-gray-400">V12 Engine</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model5">
+      <a href="customise_mercedes.html">
+        <img src="images/mercedes_amg_gt.jpg" class="car__card" alt="Car 5" />
+        <h3 class="text-xl font-bold">AMG GT</h3>
+        <p class="text-sm text-gray-400">Twin Turbo V8</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model6">
+      <a href="customise_mercedes.html">
+        <img src="images/mercedes_gle.avif" class="car__card" alt="Car 6" />
+        <h3 class="text-xl font-bold">GLE 63 S</h3>
+        <p class="text-sm text-gray-400">3.8L Twin Turbo</p>
+      </a>
+    </div>
+
+    <div class="brand-row__header col-span-3">
+      <h2 class="brand-row__title" id="Ferrari">Ferrari</h2>
+      <img src="images/white/ferrari.svg" alt="Ferrari" class="brand-row__img">
+    </div>
+
+    <div class="car__card" data-model="model7">
+      <a href="customise_ferrari.html">
+        <img src="images/ferrari_f8.jpg" class="car__card" alt="Car 7" />
+        <h3 class="text-xl font-bold">Ferrari F8</h3>
+        <p class="text-sm text-gray-400">V8 Engine</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model8">
+      <a href="customise_ferrari.html">
+        <img src="images/ferrari_roma.avif" class="car__card" alt="Car 8" />
+        <h3 class="text-xl font-bold">Ferrari Roma</h3>
+        <p class="text-sm text-gray-400">5.2L V10</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model9">
+      <a href="customise_ferrari.html">
+        <img src="images/ferrari_sf90.avif" class="car__card" alt="Car 9" />
+        <h3 class="text-xl font-bold">SF90 Stradale</h3>
+        <p class="text-sm text-gray-400">4.0L V8</p>
+      </a>
+    </div>
+
+    <div class="brand-row__header col-span-3">
+      <h2 class="brand-row__title" id="BMW">BMW</h2>
+      <img src="images/white/bmw.svg" alt="BMW" class="brand-row__img">
+    </div>
+
+    <div class="car__card" data-model="model10">
+      <a href="customise_bmw.html">
+        <img src="images/bmw_m4.webp" class="car__card" alt="Car 10" />
+        <h3 class="text-xl font-bold">BMW M4</h3>
+        <p class="text-sm text-gray-400">5.0L Twin Turbo V8</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model11">
+      <a href="customise_bmw.html">
+        <img src="images/bmw_x5.avif" class="car__card" alt="Car 11" />
+        <h3 class="text-xl font-bold">BMW X5 M</h3>
+        <p class="text-sm text-gray-400">W16 Engine</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model12">
+      <a href="customise_bmw.html">
+        <img src="images/bmw_i8.jpg" class="car__card" alt="Car 12" />
+        <h3 class="text-xl font-bold">BMW i8</h3>
+        <p class="text-sm text-gray-400">4.0L Twin Turbo V8</p>
+      </a>
+    </div>
+
+    <div class="brand-row__header col-span-3">
+      <h2 class="brand-row__title" id="Lamborghini">Lamborghini</h2>
+      <img src="images/white/lamborghini.svg" alt="Lamborghini" class="brand-row__img">
+    </div>
+
+    <div class="car__card" data-model="model13">
+      <a href="customise_lambo.html">
+        <img src="images/lambo_huracan.jpeg" class="car__card" alt="Car 13" />
+        <h3 class="text-xl font-bold">Huracan EVO</h3>
+        <p class="text-sm text-gray-400">V12 Engine</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model14">
+      <a href="customise_lambo.html">
+        <img src="images/lambo_aventador.jpg" class="car__card" alt="Car 14" />
+        <h3 class="text-xl font-bold">Aventador SVJ</h3>
+        <p class="text-sm text-gray-400">W12 Engine</p>
+      </a>
+    </div>
+
+    <div class="car__card" data-model="model15">
+      <a href="customise_lambo.html">
+        <img src="images/lambo_urus.avif" class="car__card" alt="Car 15" />
+        <h3 class="text-xl font-bold">Urus</h3>
+        <p class="text-sm text-gray-400">5.2L V10</p>
+      </a>
+    </div>
+  </section>
+
+
+
+  <div id="hoverPanel"
+  class="slide-panel fixed top-0 right-0 h-full w-96 bg-[#0a0a0a] text-white p-6 z-50 backdrop-blur-md border-l border-gray-800 shadow-2xl rounded-l-xl">
+  <img id="panelImage" src="" alt="" class="w-full h-48 object-cover rounded-xl mb-6 border border-gray-700" />
+  <h3 id="panelTitle" class="text-2xl font-bold mb-2">Model Name</h3>
+  <p id="panelDesc" class="text-sm text-gray-400 mb-6 leading-relaxed">
+    Description goes here...
+  </p>
+  <ul class="space-y-4 text-sm">
+    <li class="flex justify-between border-b border-gray-700 pb-2">
+      <span class="text-gray-400">Horsepower</span>
+      <span id="panelHP" class="text-white font-semibold"></span><span class="ml-1">HP</span>
+    </li>
+    <li class="flex justify-between border-b border-gray-700 pb-2">
+      <span class="text-gray-400">0-60 mph</span>
+      <span id="panel060" class="text-white font-semibold"></span><span class="ml-1">s</span>
+    </li>
+    <li class="flex justify-between border-b border-gray-700 pb-2">
+      <span class="text-gray-400">Engine Type</span>
+      <span id="panelEngine" class="text-white font-semibold"></span>
+    </li>
+    <li class="flex justify-between border-b border-gray-700 pb-2">
+      <span class="text-gray-400">Starting Price</span>
+      <span class="text-white font-semibold">$<span id="panelPrice"></span></span>
+    </li>
+  </ul>
+</div>
+
+  <script>
+    const data = {
+      model1: {
+        title: "911 Turbo S",
+        desc: "High-performance sports car with iconic design.",
+        img: "images/porsche_911.jpeg",
+        hp: 600,
+        zeroToSixty: 3.9,
+        engine: "V12 Engine",
+        price: "380000"
+      },
+      model2: {
+        title: "Taycan Turbo",
+        desc: "Electric sports car combining performance and innovation.",
+        img: "images/porsche_taycan.jpg",
+        hp: 710,
+        zeroToSixty: 2.9,
+        engine: "Twin Turbo V8",
+        price: "306900"
+      },
+      model3: {
+        title: "Cayenne Turbo",
+        desc: "Luxury SUV with powerful V12 engine and comfort.",
+        img: "images/porsche_cayenne.jpg",
+        hp: 759,
+        zeroToSixty: 2.8,
+        engine: "6.5L V12",
+        price: "376300"
+      },
+      model4: {
+        title: "Mercedes S-Class",
+        desc: "Flagship luxury sedan with advanced technology.",
+        img: "images/mercedes_s_class.jpg",
+        hp: 600,
+        zeroToSixty: 4.1,
+        engine: "V12 Engine",
+        price: "342500"
+      },
+      model5: {
+        title: "Mercedes AMG GT",
+        desc: "High-performance grand tourer with striking design.",
+        img: "images/mercedes_amg_gt.jpg",
+        hp: 630,
+        zeroToSixty: 3.5,
+        engine: "Twin Turbo V8",
+        price: "409600"
+      },
+      model6: {
+        title: "Mercedes GLE 63 S",
+        desc: "Sporty SUV with powerful twin-turbo V8 engine.",
+        img: "images/mercedes_gle.avif",
+        hp: 577,
+        zeroToSixty: 4.2,
+        engine: "3.8L Twin Turbo",
+        price: "284540"
+      },
+      model7: {
+        title: "Ferrari F8",
+        desc: "Iconic Italian supercar with V8 power.",
+        img: "images/ferrari_f8.jpg",
+        hp: 710,
+        zeroToSixty: 2.9,
+        engine: "V8 Engine",
+        price: "789000"
+      },
+      model8: {
+        title: "Ferrari Roma",
+        desc: "Elegant grand tourer blending style and power.",
+        img: "images/ferrari_roma.avif",
+        hp: 612,
+        zeroToSixty: 3.4,
+        engine: "5.2L V10",
+        price: "409888"
+      },
+      model9: {
+        title: "SF90 Stradale",
+        desc: "Hybrid supercar with blistering acceleration.",
+        img: "images/ferrari_sf90.avif",
+        hp: 986,
+        zeroToSixty: 2.5,
+        engine: "4.0L V8",
+        price: "769500"
+      },
+      model10: {
+        title: "BMW M4",
+        desc: "Performance coupe with aggressive styling.",
+        img: "images/bmw_m4.webp",
+        hp: 503,
+        zeroToSixty: 3.8,
+        engine: "5.0L Twin Turbo V8",
+        price: "340000"
+      },
+      model11: {
+        title: "BMW X5 M",
+        desc: "High-performance luxury SUV with W16 engine.",
+        img: "images/bmw_x5.avif",
+        hp: 617,
+        zeroToSixty: 3.8,
+        engine: "W16 Engine",
+        price: "265000"
+      },
+      model12: {
+        title: "BMW i8",
+        desc: "Plug-in hybrid sports car with futuristic design.",
+        img: "images/bmw_i8.jpg",
+        hp: 369,
+        zeroToSixty: 4.2,
+        engine: "4.0L Twin Turbo V8",
+        price: "300000"
+      },
+      model13: {
+        title: "Huracan EVO",
+        desc: "Dynamic supercar with V12 engine and sharp handling.",
+        img: "images/lambo_huracan.jpeg",
+        hp: 631,
+        zeroToSixty: 2.9,
+        engine: "V12 Engine",
+        price: "620000"
+      },
+      model14: {
+        title: "Aventador SVJ",
+        desc: "Extreme supercar with aggressive aerodynamics.",
+        img: "images/lambo_aventador.jpg",
+        hp: 759,
+        zeroToSixty: 2.8,
+        engine: "W12 Engine",
+        price: "1050000"
+      },
+      model15: {
+        title: "Urus",
+        desc: "Luxury SUV combining supercar performance with practicality.",
+        img: "images/lambo_urus.avif",
+        hp: 641,
+        zeroToSixty: 3.6,
+        engine: "5.2L V10",
+        price: "465000"
+      }
+    };
+
+    const panel = document.getElementById('hoverPanel');
+    const carCards = document.querySelectorAll('.car__card');
+    const closeBtn = document.getElementById('closeBtn');
+
+    const panelTitle = document.getElementById('panelTitle');
+    const panelDesc = document.getElementById('panelDesc');
+    const panelImage = document.getElementById('panelImage');
+    const panelHP = document.getElementById('panelHP');
+    const panel060 = document.getElementById('panel060');
+    const panelEngine = document.getElementById('panelEngine');
+    const panelPrice = document.getElementById('panelPrice');
+
+    let hideTimeout = null;
+    let isMouseOverPanelOrCard = false;
+
+    function showPanel(info) {
+      panelTitle.textContent = info.title;
+      panelDesc.textContent = info.desc;
+      panelImage.src = info.img;
+      panelHP.textContent = info.hp;
+      panel060.textContent = info.zeroToSixty;
+      panelEngine.textContent = info.engine;
+      panelPrice.textContent = Number(info.price).toLocaleString();
+
+      panel.classList.add('active');
+    }
+
+    function scheduleHide() {
+      if (hideTimeout) return; // already scheduled
+      hideTimeout = setTimeout(() => {
+        if (!isMouseOverPanelOrCard) {
+          panel.classList.remove('active');
+        }
+        hideTimeout = null;
+      }, 300);
+    }
+
+    function cancelHide() {
+      if (hideTimeout) {
+        clearTimeout(hideTimeout);
+        hideTimeout = null;
+      }
+    }
+
+    carCards.forEach(card => {
+      card.addEventListener('mouseenter', () => {
+        cancelHide();
+        isMouseOverPanelOrCard = true;
+
+        const modelKey = card.getAttribute('data-model');
+        const info = data[modelKey];
+        if (!info) return;
+
+        showPanel(info);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        isMouseOverPanelOrCard = false;
+        scheduleHide();
+      });
+    });
+
+    panel.addEventListener('mouseenter', () => {
+      cancelHide();
+      isMouseOverPanelOrCard = true;
+    });
+
+    panel.addEventListener('mouseleave', () => {
+      isMouseOverPanelOrCard = false;
+      scheduleHide();
+    });
+
+    closeBtn.addEventListener('click', () => {
+      cancelHide();
+      panel.classList.remove('active');
+    });
+  </script>
+
+  </section>
+  <footer class="footer" id="footer">
+    <div class="section__container subscribe__container">
+      <div class="subscribe__content">
+        <p class="section__subheader">OUR NEWSLETTER</p>
+        <h2 class="section__header">Subscribe To Our Newsletter</h2>
+        <p class="section__description">
+          Subscribe to our newsletter and receive exclusive content, expert
+          insights, and special offers delivered directly to your inbox.
+        </p>
+      </div>
+      <div class="subscribe__form">
+        <form id="subscribe-form">
+          <input type="text" placeholder="Your Email" />
+          <a href="#footer">
+            <button class="btn">Subscribe</button>
+          </a>
+        </form>
+      </div>
+    </div>
+    <div class="section__container footer__container">
+
+      <div class="footer__col">
+        <h4>Brands</h4>
+        <ul class="footer__links">
+          <li><a href="#">Ferrari</a></li>
+          <li><a href="#">Lamborghini</a></li>
+          <li><a href="#">Rolls Royce</a></li>
+          <li><a href="#">BMW</a></li>
+          <li><a href="#">Aston Martin</a></li>
+          <li><a href="#">Koenigsegg</a></li>
+          <li><a href="#">Mercedes</a></li>
+          <li><a href="#">Bugatti</a></li>
+          <li><a href="#">Porsche</a></li>
+          <li><a href="#">Pagani</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Lifestyle</h4>
+        <ul class="footer__links">
+          <li><a href="#">Art Of Living</a></li>
+          <li><a href="#">Collectables</a></li>
+          <li><a href="#">Models</a></li>
+          <li><a href="#">Jewelry</a></li>
+          <li><a href="#">Store</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <h4>Customer Service</h4>
+        <ul class="footer__links">
+          <li><a href="#">Individual Service and Contact</a></li>
+          <li><a href="#">Maintenance</a></li>
+          <li><a href="#">Service Partner Network</a></li>
+          <li><a href="#">Warranty</a></li>
+          <li><a href="#">Roadside Assistance</a></li>
+          <li><a href="#">Accessories</a></li>
+        </ul>
+      </div>
+      <div class="footer__col">
+        <div class="logo footer__logo">
+          <a href="home.html"><img src="images/logo2.png" alt="logo" /></a>
+        </div>
+        <ul class="footer__socials">
+          <li>
+            <a href="#"><i class="ri-facebook-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-google-fill"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-instagram-line"></i></a>
+          </li>
+          <li>
+            <a href="#"><i class="ri-youtube-line"></i></a>
+          </li>
+        </ul>
+      </div>
+    </div>
+    </div>
+  </footer>
+  <div class="footer__bar">
+    Copyright © 2025 Maison Dé Drive. All rights reserved.
+  </div>
+
+  <script src="https://unpkg.com/scrollreveal"></script>
+  <script src="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.js"></script>
+  <script src="main.js"></script>
+  <audio id="ambient-player" loop></audio>
+</body>
+
+</html>
